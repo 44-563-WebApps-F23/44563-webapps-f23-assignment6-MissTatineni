@@ -31,15 +31,57 @@ function tips(){
 
     for(let i=0; i<5; i++){
     calculatedTip=(base*tip)/100;
-    myOutput += tip+'% is '+calculatedTip+'; '; 
-    tip=tip+4;
+    myOutput += tip+"% is "+calculatedTip+";" ;
+    tip+=4;
     }
-    document.getElementById("result").innerHTML = 'Tips are: '+ myOutput;
-
-    
-    
+    document.getElementById("result").innerHTML = "Tips are: "+ myOutput;   
 }
 </script>
+
+<br>
+<br>
+<br>
+
+<form>
+    
+    <input type="radio" id="button1" onClick="chooseOp()" value="sum">
+    <label for="button1">sum</label><br><br>
+    
+    <input type="radio" id="button2" onClick="chooseOp()" value="difference">
+    <label for="button2">diff</label><br><br>
+    
+    <input type="radio" id="button3" onClick="chooseOp()" value="product">
+    <label for="button3">mult</label><br><br>
+    
+
+</form>
+ 
+<p id="output"></p>
+
+<script>
+    function chooseOp(){
+    let baseOp =parseFloat(document.getElementById("baseAmount").value);
+    let tipOp = parseFloat(document.getElementById("tipInput").value); 
+    let sum;
+    let diff;
+    let prod;
+    let statement="";
+
+        if(document.getElementById("button1").checked==true){
+        sum=baseOp+tipOp;
+        statement="Sum of "+baseOp+" and "+tipOp+" is "+sum;
+        }else if(document.getElementById("button2").checked==true){
+        diff= baseOp-tipOp;
+        statement="Difference between "+baseOp+" and "+tipOp+" is "+diff;
+        }else if(document.getElementById("button3").checked==true){
+        prod=baseOp*tipOp;
+        statement="Product of "+baseOp+" and "+tipOp+" is "+prod;
+        }
+       document.getElementById("output").innerHTML = statement;   
+
+    }
+</script>
+
 
 </body>
 </html> 
