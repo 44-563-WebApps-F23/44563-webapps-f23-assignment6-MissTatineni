@@ -16,7 +16,7 @@
     <label for="guessValue">Guess the author </label>
     <input type ="text" id="guessValue" name="guessValue"> <br>
     <br>
-    <input type="input" onclick="checkAuthor()" value="Check the Guess">
+    <button type="button" onclick="checkAuthor()" >Check the Guess</button>
     <br>
     <p>Good:<span id="goodCount">0</span></p>
     <p>Oops:<span id="oopsCount">0</span></p>
@@ -28,8 +28,8 @@
  var oops=0;
 
 function checkAuthor(){
-   var secret = document.getElementById("secretValue").value
-   var guess = document.getElementById("guessValue").value
+   var secret = document.getElementById("secretValue").value;
+   var guess = document.getElementById("guessValue").value;
     if(secret==guess){
         good++;
         alert("You got it right");
