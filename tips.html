@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Tips!</title>
+    </head>
+ 
+<body>
+
+<h2>Bhargavi Tatineni shows tip amounts</h2>
+
+<form>
+    <label for="baseAmount">Enter base amount </label>
+    <input type ="number" id="baseAmount" value=50> <br><br>
+
+    <label for="tipInput">Enter the tip percent</label>
+    <input type ="number" id="tipInput" value=15> <br><br>
+
+    <input type="button" onclick="tips()" value="Show Tip">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+function tips(){
+    let base =document.getElementById("baseAmount").value;
+    let tip = parseFloat(document.getElementById("tipInput").value);
+    let myOutput ="";
+    let calculatedTip;
+
+    for(let i=0; i<5; i++){
+    calculatedTip=(base*tip)/100;
+    myOutput += tip+'% is '+calculatedTip+'; '; 
+    tip=tip+4;
+    }
+    document.getElementById("result").innerHTML = 'Tips are: '+ myOutput;
+
+    
+    
+}
+</script>
+
+</body>
+</html> 
