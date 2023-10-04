@@ -4,6 +4,24 @@
     <title>
         Author input
     </title>
+
+    <style>
+        img {
+            cursor: pointer;
+        }
+        
+        img:hover {
+           border:4px solid aquamarine; 
+        }
+        button{
+            cursor:pointer;
+        }
+
+        button:hover {
+             background-color: lightcoral;
+        }
+
+    </style>
  </head>
 <body>
 
@@ -16,10 +34,12 @@
     <label for="guessValue">Guess the author </label>
     <input type ="text" id="guessValue" name="guessValue"> <br>
     <br>
-    <button type="button" onclick="checkAuthor()" >Check the Guess</button>
+    <button type="button" onclick="checkAuthor()" id="guess">Check the Guess</button>
     <br>
     <p>Good:<span id="goodCount">0</span></p>
     <p>Oops:<span id="oopsCount">0</span></p>
+
+    <div>Incorrect guesses:<span id="incorrect"> 0</span></div><br><br>
 </form>
 
 
@@ -35,11 +55,20 @@ function checkAuthor(){
         alert("You got it right");
     } else {
         oops++;
-        alert("Sorry");
+        if(oops>7){
+            document.getElementById("guess").disabled=true;
+           alert("Sorry,ran out of guesses "); 
+
+        }else{
+            alert("Sorry");
+        }
+        
+        
     }
 
     document.getElementById("goodCount").innerHTML=good;
     document.getElementById("oopsCount").innerHTML=oops;
+    document.getElementById("incorrect").innerHTML=oops;
 }
 </script>
 
